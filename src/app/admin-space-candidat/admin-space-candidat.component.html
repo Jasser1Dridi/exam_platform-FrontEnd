@@ -1,0 +1,62 @@
+<div class="pane__inner row">
+  <article>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="container" style="margin:auto;text-align: center">
+      <section class="panel">
+
+        <h1 class="heading--serif jumbotron__title medium-offset-bottom-2">
+          Liste Des Entreprises inscrit                   </h1>
+        <hr>
+
+        <br>
+        <br>
+
+
+
+
+        <table class="table table-striped table-advance table-hover border" style="text-align: center">
+          <tbody>
+          <tr style="background: darkgrey">
+
+
+            <th class="center"><b> id </b></th>
+            <th class="center"><b>Nom</b></th>
+            <th class="center">  <b>email </b></th>
+            <th class="center"><b>phoneNumber</b></th>
+
+            <th class="center"> <b>adresse</b></th>
+            <th class="center"> <b>domaine</b></th>
+            <th class="center"> <b>Actions</b></th>
+
+          </tr>
+
+          <tr *ngFor="let candidat of allCandidat">
+
+            <td class="center"> <span>{{candidat.id}}</span></td>
+            <td class="center"><span>{{candidat.nom}}</span></td>
+
+
+            <td class="center"><span>{{candidat.email}}</span></td>
+            <td class="center"><span>{{candidat.adresse}}</span></td>
+            <td class="center"><span>{{candidat.phoneNumber}}</span></td>
+            <td class="center"><span>{{candidat.domaine}}</span></td>
+            <td>
+             <a routerLink="/admin/candidat/edit/{{candidat.id}}"> <i class="fa-solid fa-user-pen fa-lg" style="color:green;margin-right:7px"></i> </a>
+              <a (click)="deleteEntreprise(candidat.id)"> <i class="fa-solid fa-trash fa-lg" style="color: red"></i> </a>
+            </td>
+
+
+          </tr>
+
+
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+  </article>
+</div>

@@ -1,0 +1,63 @@
+<div class="pane__inner row">
+  <article>
+    <br>
+    <br>
+
+<br>
+    <br>
+    <div class="container" style="text-align: center;margin: auto">
+      <section class="panel">
+
+        <h1 style="font-size: 40px;color: black;font-weight: bolder">
+          Liste Des Compagnes D'examens                    </h1>
+        <hr>
+
+        <br>
+        <br>
+        <div id="#table-wrapper" class="large-screen">
+          <table style="text-align: center" class="table-responsive card-list-table large-screen">
+            <thead>
+            <tr style="background: darkgrey;text-align: center">
+
+              <th class="center" style="color: snow;text-align: center"> <b> id </b></th>
+              <th class="center" style="color: snow;text-align: center"><b>Name</b></th>
+              <th class="center" style="color: snow;text-align: center"><b>start Date </b></th>
+              <th class="center" style="color: snow;text-align: center"><b>end Date</b></th>
+
+              <th class="center" style="color: snow;text-align: center"><b>Classement</b></th>
+
+
+
+            </tr>
+
+            </thead>
+            <tbody>
+
+
+            <tr *ngFor="let comp of scores">
+
+              <td class="center"> <span>{{comp.id}}</span></td>
+              <td class="center"><span>{{comp.name}}</span></td>
+
+
+              <td class="center"><span>{{comp.start_date}}</span></td>
+
+              <td class="center" ><span>{{comp.end_date}}</span></td>
+              <td class="center"><span> <a [routerLink]="['/entrepriseSpace/ConsultClassement', comp.id]"> <i class="fa-solid fa-eye"></i> </a></span></td>
+
+
+
+
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+
+
+      </section>
+    </div>
+
+  </article>
+</div>

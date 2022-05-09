@@ -1,0 +1,62 @@
+<div class="pane__inner row">
+  <article>
+
+
+
+    <div class="container" style="margin:auto;text-align: center;margin-top:80px">
+
+      <section class="panel" >
+
+        <h1 style="font-size: 40px;color: black;font-weight: bolder">
+          Liste Des Candidats
+        </h1>
+        <hr>
+
+        <br>
+        <br>
+
+        <div id="#table-wrapper" class="large-screen" style="box-shadow: 1px 1px 5px black">
+          <table style="text-align: center" class="table-responsive card-list-table large-screen">
+            <thead>
+            <tr style="background: darkgrey;text-align: center">
+
+              <th class="center" style="color: snow;text-align: center"> <b>Cin</b></th>
+              <th class="center" style="color: snow;text-align: center">  <b>Nom</b></th>
+              <th class="center" style="color: snow;text-align: center"> <b>Email </b></th>
+              <th class="center" style="color: snow;text-align: center"> <b>Phone Number</b></th>
+              <th class="center" style="color: snow;text-align: center"> <b>Adresse</b></th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <tr *ngFor="let q of allCandidats">
+
+              <td class="center"> <span>{{q.cin}}</span></td>
+              <td class="center"><span>{{q.nom}}</span></td>
+
+              <td class="center"><span>{{q.email}}</span></td>
+              <td class="center"><span>{{q.phoneNumber}}</span></td>
+              <td class="center"><span>{{q.adresse}}</span></td>
+
+
+
+
+            </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+
+
+
+
+      </section>
+    </div>
+
+
+  </article>
+</div>

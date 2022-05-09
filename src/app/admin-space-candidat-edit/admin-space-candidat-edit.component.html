@@ -1,0 +1,32 @@
+
+
+
+<div class="form-style-5" style="    margin-top: 150px;
+    width: 700px !important;">
+  <form [formGroup]="candidatForm">
+    <fieldset>
+      <legend><span class="number">1</span> Compte Info</legend>
+      <label for="id"> Id : </label>
+      <input type="text" name="field1" id="id" value="{{candidat[0].id}}" formControlName="id" readonly placeholder="Your Name *">
+      <label for="nom"> Nom : </label>
+
+      <input type="text" name="field1" id="nom" formControlName="nom" placeholder="Your Name *">
+      <label for="email"> Email : </label>
+
+      <input type="text" name="field1" id="email"  formControlName="email"placeholder="Your Name *">
+      <label for="phoneNumber"> PhoneNumber : </label>
+      <input type="text" name="field1" id="phoneNumber"  formControlName="phoneNumber" placeholder="Your Name *">
+      <label for="domaine"> Domaine : </label>
+
+      <input type="text" name="field1" id="domaine"  formControlName="domaine" placeholder="Your Name *">
+      <label for="adresse"> Adresse : </label>
+
+      <textarea name="field3" formControlName="adresse" id="adresse" placeholder="About yourself"></textarea>
+    </fieldset>
+    <input type="submit" (click)="update()" value="Mise à jour" />
+  </form>
+  <div style="text-align: center" class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="sucess"  >
+    <strong style="text-align: center">la mise à jour a été effectuée avec succès</strong>
+
+  </div>
+</div>

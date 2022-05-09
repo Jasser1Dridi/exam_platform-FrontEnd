@@ -1,0 +1,62 @@
+<div class="pane__inner row">
+  <article>
+    <br>
+    <br>
+    <br>
+    <div class="button-group medium-right medium-pull-top-2 offset-bottom-1">
+      <a class="button-50 button--expanded-on-small round" data-open="modal--create-exam" routerLink="/admin/question/add">
+        Créer une nouvelle question
+      </a>
+    </div>
+
+    <div class="container" style="margin:auto;text-align: center">
+      <section class="panel">
+
+        <h1 class="heading--serif jumbotron__title medium-offset-bottom-2">
+          Liste Des Questions                    </h1>
+        <hr>
+
+        <br>
+        <br>
+
+
+
+
+        <table class="table table-striped table-advance table-hover border" style="text-align: center">
+          <tbody>
+          <tr style="background: darkgrey">
+
+
+            <th class="center"><b> id </b></th>
+            <th class="center"><b>Question</b></th>
+            <th class="center">  <b>Points </b></th>
+            <th class="center"><b>Domaine</b></th>
+
+
+            <th class="center"> <b>Actions</b></th>
+
+          </tr>
+
+          <tr *ngFor="let question of allQuestion">
+
+            <td class="center"> <span>{{question.id}}</span></td>
+            <td class="center"><span>{{question.question}}</span></td>
+
+
+            <td class="center"><span>{{question.points}}</span></td>
+            <td class="center"><span>{{question.domaine}}</span></td>
+            <td>
+              <a (click)="deleteQuestion(question.id)"> <i class="fa-solid fa-trash fa-lg" style="color: red"></i> </a>
+            </td>
+
+
+          </tr>
+
+
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+  </article>
+</div>

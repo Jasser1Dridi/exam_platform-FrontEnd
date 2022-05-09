@@ -1,0 +1,94 @@
+<app-header></app-header>
+<!-- Student Register Form -->
+<section id="contact" class="contact section pt-100 pb-100">
+  <div class="container">
+    <div class="contact-head">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-title mb-20">
+            <h2>Inscription Candidat <span class="text-theme-colored"> </span></h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 signup">
+          <div class="form-head">
+            <form class="form-signin"  method="POST" v-if="activeStep==1" [formGroup]="candidatForm" >
+              <div class="row">
+                <div class="col-lg-6 col-md-6 mb-20">
+                  <div class="form-input">
+                    <label>Cin <span class="danger">*</span></label>
+                    <!-- <span v-show="errors.has('fullName')" class="danger" style="font-size: 12px;">{{ errors.first('fullName') }}</span> -->
+                    <input formControlName="cin" class="form-control" name="cin" type="text" placeholder="Cin" v-model="user.name" v-validate="'required'">
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-20">
+                  <div class="form-input">
+                    <label>Votre nom <span class="danger">*</span></label>
+                    <!-- <span v-show="errors.has('fullName')" class="danger" style="font-size: 12px;">{{ errors.first('fullName') }}</span> -->
+                    <input class="form-control" formControlName="name" name="fullName" type="text" placeholder="nom d'entreprise" v-model="user.name" v-validate="'required'">
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-20">
+                  <div class="form-input">
+                    <label>Email  <span class="danger">*</span></label>
+                    <!-- <span v-show="errors.has('email')" class="danger" style="font-size: 12px;">{{ errors.first('email') }}</span> -->
+                    <input class="form-control" name="email" formControlName="email" v-model="user.email" type="email" placeholder="E-mail" v-validate="'required|email'">
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-20">
+                  <div class="form-input">
+                    <label>Password  <span class="danger">*</span></label>
+                    <!-- <span v-show="errors.has('email')" class="danger" style="font-size: 12px;">{{ errors.first('email') }}</span> -->
+                    <input formControlName="password" class="form-control" name="password"  type="password" placeholder="Password" v-validate="'required|email'">
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-20">
+                  <div class="form-input">
+                    <label>Mobile No. <span class="danger">*</span></label>
+                    <!-- <span v-show="errors.has('mobile')" class="danger" style="font-size: 12px;">{{ errors.first('mobile') }}</span> -->
+                    <input formControlName="mobile" class="form-control" name="mobile" type="text" placeholder="Mobile No." v-validate="'required|numeric|length:10'">
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-20">
+                  <div class="form-input">
+                    <label>Addresse </label>
+
+                    <input formControlName="address" class="form-control" name="adresse" type="text" placeholder="Adresse" v-validate="'required'">
+                  </div>
+                </div>
+
+
+
+                <div class="col-lg-12 col-md-12 mb-20">
+                  <div class="form-input" style="width:25%">
+                    <button type="submit" class="btn-small" (click)="signUp()" >s'inscrire</button>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12 text-right">
+
+  <br>
+                  <br>
+                  <br>
+                  <div style="text-align: center" class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="saved" >
+                    <strong style="text-align: center">votre inscription a bien été enregistrée</strong>
+
+                  </div>
+
+                </div>
+              </div>
+            </form>
+
+
+            <!--/ End Register -->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="sign-in-right">
+            <img src="./assets/images/student-login-2.jpg" alt="" class="img-fluid">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

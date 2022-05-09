@@ -1,0 +1,98 @@
+<section id="contact" class="contact section pt-100 pb-100">
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container" style="margin: auto;text-align: center">
+    <div class="contact-head">
+      <div class="row" >
+        <div class="col-md-12">
+
+            <h1 style="font-size: 35px;font-weight: bolder">Creation Examen <span class="text-theme-colored"> </span></h1>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 signup" style="margin:auto">
+          <div class="form-head">
+            <hr>
+            <form class="form-signin"  method="POST" v-if="activeStep==1" [formGroup]="examenForm">
+              <div class="row">
+
+                <div class="col-lg-6 col-md-6 mb-20">
+                  <div class="form-input">
+                    <label>Nom De Examen <span class="danger">*</span></label>
+                    <!-- <span v-show="errors.has('fullName')" class="danger" style="font-size: 12px;">{{ errors.first('fullName') }}</span> -->
+                    <input formControlName="name" name="fullName" class="form-control"  type="text"  v-model="user.name" v-validate="'required'">
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-20">
+                  <div class="form-input">
+                    <label>Duree  <span class="danger">*</span></label>
+                    <!-- <span v-show="errors.has('email')" class="danger" style="font-size: 12px;">{{ errors.first('email') }}</span> -->
+                    <input formControlName="duration" class="form-control" name="email" type="number"  v-validate="'required|email'">
+                  </div>
+                </div>
+                  <br>
+                <br>
+                <br>
+
+                <table class="table table-striped table-advance table-hover border" style="text-align: center" style="margin-top: 50px">
+
+                  <tbody>
+                  <tr style="background: #d2c7ff">
+
+                    <th> </th>
+                    <th class="center"> <b> id </b></th>
+                    <th class="center"><b>question</b></th>
+                    <th class="center">  <b>domaine </b></th>
+                    <th class="center"> <b>points</b> </th>
+                    <th class="center"> <b>managed By </b></th>
+                  </tr>
+                  <tr *ngFor="let q of  printNullableExams() ">
+                    <td> <input type="checkbox" style="height:17px;width: 17px"  [(ngModel)]="q.selected" [ngModelOptions]="{standalone: true}"></td>
+                    <td class="center"> <span>{{q.id}}</span></td>
+                    <td class="center"><span>{{q.question}}</span></td>
+                    <td class="center"><span>{{q.domaine}}</span></td>
+                    <td class="center"><span>{{q.points}}</span></td>
+
+                    <td class="center"><span>{{q.managedby}}</span></td>
+
+
+                  </tr>
+
+
+
+                  </tbody>
+                </table>
+              </div>
+            </form>
+
+
+            <!--/ End Register -->
+          </div>
+        </div>
+
+      </div>
+      <br>
+      <br>
+      <br>
+      <div class="button-group medium-right medium-pull-top-2 offset-bottom-1">
+        <br>
+
+        <a class="button-5" style="margin-left: 1000px" data-open="modal--create-exam" (click)="saveExamen()">
+          Create new Examen
+        </a>
+      </div>
+
+      <br>
+      <br>
+
+      <div style="text-align: center" class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="sucess==true"  >
+        <strong style="text-align: center">Votre examen a été cree avec succès</strong>
+
+      </div>
+
+    </div>
+  </div>
+</section>

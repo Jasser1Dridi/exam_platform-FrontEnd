@@ -1,0 +1,64 @@
+<article class="contentcontainer" style="background-color: #eaf5f2;height: 100% ;-youbkit-touch-callout: none; /* iOS Safari */
+    -youbkit-user-select: none;   /* Chrome 6.0+, Safari 3.1+, Edge & Opera 15+ */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;        /* IE 10+ and Edge */
+    user-select: none;   " >
+  <div class="row offset-bottom-1 medium-offset-bottom-1" >
+    <div class="column">
+
+
+
+      <h1>
+        Hi                <span class="dashboard__user-name">
+                   {{candidat[0].nom}}              </span>
+      </h1>
+      <h6>
+        Nom De Compagnes D'examens         :  <span class="dashboard__user-name" style="color:green">
+                    {{compagneDetails[0].name}}         </span>
+      </h6>
+      <h6>
+        Date de début       :  <span class="dashboard__user-name" style="color:green">
+                    {{compagneDetails[0].start_date}}         </span>
+      </h6>
+      <h6>
+        Date de fin      :  <span class="dashboard__user-name" style="color:green">
+                    {{compagneDetails[0].end_date}}         </span>
+      </h6>
+
+    </div>
+    <hr style="font-weight: bolder">
+  </div>
+
+  <div id="w1" class="row row--flex-equal-heights"  [class.unclickable] = "checkDate()== true "
+  >
+    <div class="column medium-6 large-4" data-key="8104" *ngFor="let examen of allcompagneExamen" >
+
+    <div class="card card--1 dashboard__card dashboard__card--exam"  [class.unclickable] = "done(examen.id)== true " >
+      <section >
+        <a class="card__link" aria-labelledby="section8104" [routerLink]="['/examinedQuestions', examen.id]  ">
+          <header class="card__header" >
+            <h2 id="section8104">{{examen.name}} </h2>
+            <p class="readmore offset-bottom-0">
+                        <span class="card__link-text" >
+                         Duree : {{examen.duration}} H                     <i class="mdi mdi-24px mdi-chevron-right" aria-hidden="true"></i>
+                        </span>
+            </p>
+            <img alt="" aria-hidden="true" class="knowly dashboard__illustration dashboard__illustration--exam" src="./../../assets/images/deadlyduck/illustrations/knowly--clipboard.svg">
+          </header>
+        </a>
+        <div class="card__body">
+          <h4 id="section8104"> Nombre De Questions : {{examen.questionTotal}}</h4>
+          <p><a style="color: #9e4f8f" rel="noopener noreferrer" target="_blank">Points Total :{{examen.pointTotal}}</a></p>
+         <p>
+           examen va être facile assurez-vous de prendre votre temps et bonne chance</p></div>
+
+      </section>
+    </div>
+  </div>
+
+
+
+
+   </div>
+
+</article>

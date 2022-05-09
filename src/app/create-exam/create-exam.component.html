@@ -1,0 +1,94 @@
+<section id="contact" class="contact section pt-100 pb-100">
+  <div class="container" >
+    <div class="contact-head">
+      <div class="row" >
+        <div class="col-md-12">
+          <div class="section-title mb-20">
+            <h2>Creation Questionnaire <span class="text-theme-colored"> </span></h2>
+
+            <hr style="height: 3px;background-color: black">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 signup" style="margin:auto">
+          <div class="form-head">
+
+
+            <hr>
+            <form class="form-signin"  method="POST" v-if="activeStep==1" [formGroup]="questionForm">
+              <div class="row">
+
+                <div class="col-lg-6 col-md-6 mb-20">
+                  <div class="form-input">
+                    <label>Nom De Questionnaire <span class="danger">*</span></label>
+                    <!-- <span v-show="errors.has('fullName')" class="danger" style="font-size: 12px;">{{ errors.first('fullName') }}</span> -->
+                    <input formControlName="questionName" class="form-control" name="fullName" type="text" placeholder="Qustionnaire" v-model="user.name" v-validate="'required'">
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-20">
+                  <div class="form-input">
+                    <label>Points  <span class="danger">*</span></label>
+                    <!-- <span v-show="errors.has('email')" class="danger" style="font-size: 12px;">{{ errors.first('email') }}</span> -->
+                    <input formControlName="points" class="form-control" name="email" type="number" placeholder="Points" v-validate="'required|email'">
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-12 mb-20">
+                  <div class="form-input">
+                    <label>Domaine  <span class="danger">*</span></label>
+                    <!-- <span v-show="errors.has('email')" class="danger" style="font-size: 12px;">{{ errors.first('email') }}</span> -->
+                    <input formControlName="domaine" class="form-control" name="email" type="text" placeholder="Domaine" v-validate="'required|email'">
+                  </div>
+                </div>
+                <hr style="height: 5px;margin-left: -17px;margin-right:-16px">
+                <div class="col-lg-8 col-md-8 mb-20" >
+                  <div class="form-input" style="width:25%">
+                    <button type="submit" class="btn-small" style="width: max-content"  (click)='addReponse()'>Ajouter Reponse</button>
+                  </div>
+                </div>
+                <div formArrayName="reponses" *ngFor="let t of reponses.controls; let i = index">
+                <div class="row" [formGroupName]="i">
+                <div class="col-lg-6 col-md-6 mb-20" >
+                  <div class="form-input" >
+                    <label>Reponse  <span class="danger">*</span></label>
+                    <!-- <span v-show="errors.has('email')" class="danger" style="font-size: 12px;">{{ errors.first('email') }}</span> -->
+                    <input  formControlName='reponse' class="form-control"id="{{'reponse'+i}}"  type="text" placeholder="Reponse" >
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-20">
+                  <div class="form-check">
+                    <label>Réponse Correcte <span class="danger">*</span></label>
+                    <!-- <span v-show="errors.has('mobile')" class="danger" style="font-size: 12px;">{{ errors.first('mobile') }}</span> -->
+                    <br>
+                    <input formControlName="isTrue" style="height:50px;width: 30px"  id="{{'isTrue'+i}}"  [value]="true" type="checkbox" >
+                  </div>
+                </div>
+                </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 mb-20">
+                  <div class="form-input" style="width:25%">
+                    <button type="submit" class="btn-small"[disabled]="questionForm.invalid"  (click)="saveQuestionnaire()">Sauvegarder</button>
+                  </div>
+                </div>
+
+
+              </div>
+            </form>
+
+
+            <!--/ End Register -->
+          </div>
+        </div>
+
+      </div>
+
+      <br>
+      <br>
+      <div style="text-align: center" class="alert alert-success alert-dismissible fade show" role="alert"  *ngIf="sucess"  >
+        <strong style="text-align: center">votre inscription a bien été enregistrée</strong>
+
+      </div>
+    </div>
+  </div>
+</section>

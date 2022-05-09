@@ -1,0 +1,49 @@
+
+<div  class="off-canvas-content" data-offcanvas-content="">
+  <div class="inner-wrap">
+    <div class="pane">
+      <div class="pane__side pane__side--gutter-nav hide-for-print">
+        <nav class="side-bar hide-for-small-only" aria-label="Desktop main navigation">
+          <div class="side-bar__top">
+            <a class="side-bar__logo" href="item3239.html" title="Go to dashboard" aria-label="Go to dashboard">
+              <img class="side-bar__logo-image" src="/assets/images/deadlyduck/logos/easy-lms-logo--knowly.svg " alt="Easy LMS">
+            </a>
+            <ul class="menu vertical side-bar__menu side-bar__menu--mainnav" style="margin-top: 20px">
+              <li></li>
+
+              <li ><i class="fa-solid fa-file-circle-question fa-lg" style="color:white ;"></i><a   routerLink="Questionnaire"> Questionnaire</a></li>
+              <li> <i class="fa-solid fa-file-lines fa-lg" style="color:white ;"></i><a routerLink="examens">Examens</a></li>
+              <li><i class="fa-solid fa-folder-open fa-lg" style="color:white ;"></i><a  routerLink="compagneExamen">Compagne d'examen</a></li>
+              <li><i class="fa-solid fa-medal fa-lg" style="color:white ;"></i><a  routerLink="classement">Classement </a></li>
+
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="pane__grow pane__grow--gutter-content">
+
+
+        <nav class="top-bar hide-for-print" aria-label="Main navigation">
+
+
+
+        </nav>
+
+        <div class="pane">
+          <div class="pane__side pane__side--aside"></div>
+          <main class="pane__grow pane__grow--main pane__grow--overview" id="mainContent">
+            <nav class="context-menu hide-for-print" aria-label="Context navigation">
+              <button class="knowly-helper__button hide-for-small-only "   routerLink=""data-toggle="knowlyHelperDropdown">
+                <i class="fa-solid fa-user" style="margin-right: 5px"></i>                 <span class="knowly-helper__button-label">Sign Out</span>
+              </button>
+
+            </nav>
+              <router-outlet></router-outlet>
+          </main>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

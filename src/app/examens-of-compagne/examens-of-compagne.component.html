@@ -1,0 +1,49 @@
+<div class="pane__inner row">
+  <article>
+
+
+
+    <div class="container">
+      <section class="panel">
+
+        <h1 class="heading--serif jumbotron__title medium-offset-bottom-2">
+          Liste Des Examens
+        </h1>
+        <hr>
+
+        <br>
+        <br>
+
+
+
+
+        <table class="table table-striped table-advance table-hover border" style="text-align: center">
+          <tbody>
+          <tr style="background: #d2c7ff">
+
+
+            <th class="center"> <i class="fa-solid fa-user" style="margin-right: 6px"></i><b> id </b></th>
+            <th class="center"><i class="fa-solid fa-envelope" style="margin-right: 6px"></i><b>Name</b></th>
+            <th class="center"><i class="fa-solid fa-graduation-cap" style="margin-right: 6px"></i> <b>Duration </b></th>
+
+            <th class="center"><i class="fa-solid fa-computer-mouse" style="margin-right: 6px"></i> <b>Questions</b></th>
+          </tr>
+          <tr *ngFor="let q of examens">
+
+            <td class="center"> <span>{{q.id}}</span></td>
+            <td class="center"><span>{{q.name}}</span></td>
+
+            <td class="center"><span>{{q.duration}}</span></td>
+
+            <td class="center"><span> <a [routerLink]="['/entrepriseSpace/reponses', q.id]"> <i class="fa-solid fa-eye"></i> </a></span></td>
+
+
+          </tr>
+
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+  </article>
+</div>

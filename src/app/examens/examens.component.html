@@ -1,0 +1,67 @@
+ <div class="pane__inner row">
+  <article>
+<br>
+    <br>
+    <br>
+    <div class="button-group medium-right medium-pull-top-2 offset-bottom-1">
+      <a class="button-50 button--expanded-on-small round" data-open="modal--create-exam" routerLink="/entrepriseSpace/createExamens">
+
+        créer un nouvel examen
+      </a>
+    </div>
+
+    <div class="container" style="margin:auto;text-align: center">
+      <section class="panel">
+
+        <h1 class="heading--serif jumbotron__title medium-offset-bottom-2">
+          Liste Des Examens                    </h1>
+        <hr>
+
+        <br>
+        <br>
+
+
+        <div id="#table-wrapper" class="large-screen">
+          <table style="text-align: center" class="table-responsive card-list-table large-screen">
+            <thead>
+            <tr style="background: darkgrey;text-align: center">
+
+
+              <th class="center" style="color: snow;text-align: center"><b> id </b></th>
+              <th class="center" style="color: snow;text-align: center"><b>Name</b></th>
+              <th class="center" style="color: snow;text-align: center">  <b>duration </b></th>
+              <th class="center" style="color: snow;text-align: center"><b>Compagne De Examen</b></th>
+
+              <th class="center" style="color: snow;text-align: center"><b>Questions</b></th>
+
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <tr *ngFor="let examen of examens">
+
+              <td class="center"> <span>{{examen.id}}</span></td>
+              <td class="center"><span>{{examen.name}}</span></td>
+
+
+              <td class="center"><span>{{examen.duration}}</span></td>
+              <td class="center" *ngIf="examen.compagneExamen != null"><span>{{examen.compagneExamen}}</span></td>
+              <td class="center" *ngIf="examen.compagneExamen == null"><span>--</span></td>
+              <td class="center"><span> <a [routerLink]="['/entrepriseSpace/questionsOfExamen', examen.id]"> <i class="fa-solid fa-eye"></i> </a></span></td>
+
+
+
+            </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+
+
+      </section>
+    </div>
+
+  </article>
+</div>

@@ -1,0 +1,58 @@
+<div class="pane__inner row">
+  <article>
+
+
+
+    <div class="container" style="margin: auto;text-align: center;">
+      <section class="panel">
+
+        <h1 class="heading--serif jumbotron__title medium-offset-bottom-2">
+          Liste Des Questionnaires
+        </h1>
+        <hr>
+
+        <br>
+        <br>
+
+
+
+
+        <table class="table table-striped table-advance table-hover border" style="text-align: center">
+          <tbody>
+          <tr style="background: darkgrey">
+
+
+            <th class="center"> <b> id </b></th>
+            <th class="center"><b>question</b></th>
+            <th class="center"> <b>Examen id </b></th>
+
+            <th class="center"><b>domaine </b></th>
+            <th class="center"> <b>points</b> </th>
+            <th class="center"> <b>managed By </b></th>
+            <th class="center"> <b>responses</b></th>
+
+
+          </tr>
+          <tr *ngFor="let q of questions">
+
+            <td class="center"> <span>{{q.id}}</span></td>
+            <td class="center"><span>{{q.question}}</span></td>
+            <td class="center" *ngIf="q.examen!=null"><span>{{q.examen}}</span></td>
+            <td class="center" *ngIf="q.examen==null"><span>--</span></td>
+
+            <td class="center"><span>{{q.domaine}}</span></td>
+            <td class="center"><span>{{q.points}}</span></td>
+
+            <td class="center"><span>{{q.managedby}}</span></td>
+            <td class="center"><span> <a [routerLink]="['/entrepriseSpace/reponses', q.id]"> <i class="fa-solid fa-eye"></i> </a></span></td>
+
+
+          </tr>
+
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+  </article>
+</div>

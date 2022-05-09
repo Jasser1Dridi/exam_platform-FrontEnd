@@ -1,0 +1,73 @@
+<div class="pane__inner row">
+  <br>
+  <br>
+  <br>
+
+  <article>
+<br>
+    <br>
+    <br>
+    <div class="button-group medium-right medium-pull-top-2 offset-bottom-1">
+      <a  class="button-50" data-open="modal--create-exam" routerLink="/entrepriseSpace/createQuestionnaire">
+
+        créer une nouvelle questionnaire
+      </a>
+    </div>
+
+    <div class="container" style="margin: auto;
+    text-align: center;">
+    <section class="panel">
+
+      <h1 class="heading--serif jumbotron__title medium-offset-bottom-2">
+        Liste Des Questionnaires                    </h1>
+      <hr>
+
+      <br>
+
+
+<div id="#table-wrapper" class="large-screen">
+      <table style="text-align: center" class="table-responsive card-list-table large-screen">
+        <thead>
+        <tr style="background: grey">
+
+
+          <th class="center" style="color: snow"> <b> id </b></th>
+          <th class="center"style="color: snow"><b>question</b></th>
+          <th class="center"style="color: snow"> <b>Examen id </b></th>
+
+          <th class="center"style="color: snow">  <b>domaine </b></th>
+          <th class="center"style="color: snow"> <b>points</b> </th>
+          <th class="center"style="color: snow"> <b>managed By </b></th>
+          <th class="center"style="color: snow"> <b>responses</b></th>
+          <th class="center"style="color: snow"> <b>export</b></th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr *ngFor="let q of questionnaire">
+
+          <td class="center " data-title="Column #1" > <span>{{q.id}}</span></td>
+          <td class="center" data-title="Column #1"><span>{{q.question}}</span></td>
+          <td class="center" data-title="Column #1" *ngIf="q.examen!=null"><span>{{q.examen}}</span></td>
+          <td class="center"data-title="Column #1" *ngIf="q.examen==null"><span>--</span></td>
+
+          <td class="center" data-title="Column #1"><span>{{q.domaine}}</span></td>
+          <td class="center" data-title="Column #1"><span>{{q.points}}</span></td>
+
+          <td class="center" data-title="Column #1"><span>{{q.managedby}}</span></td>
+          <td class="center" data-title="Column #1"><span> <a [routerLink]="['/entrepriseSpace/reponses', q.id]"> <i class="fa-solid fa-eye"></i> </a></span></td>
+          <td class="center" data-title="Column #1"><span> <a style="color:#7e3f72" (click)="getReponses(q.id)"><i class="fa-solid fa-cloud-arrow-down"></i></a></span></td>
+
+
+
+        </tr>
+
+        </tbody>
+      </table>
+</div>
+    </section>
+  </div>
+
+  </article>
+</div>

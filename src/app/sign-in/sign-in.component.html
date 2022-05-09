@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+
+
+
+  <div class="formbg-outer" style="margin-top: 100px;">
+    <div class="formbg">
+      <div class="formbg-inner padding-horizontal--48" style="box-shadow: 1px 0px 6px black">
+        <span class="padding-bottom--15" style="text-align: center;font-weight: bolder;font-size: 29px" >Connexion</span>
+        <form id="stripe-login"  [formGroup]="loginForm">
+          <div class="field padding-bottom--24">
+            <label for="email">Email</label>
+            <input type="email" name="email" formControlName="username">
+          </div>
+          <div class="field padding-bottom--24">
+            <div class="grid--50-50">
+              <label for="password">Password</label>
+              <div class="reset-pass">
+              </div>
+            </div>
+            <input type="password" name="password"  formControlName="password">
+          </div>
+          <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
+
+          </div>
+          <div class="field padding-bottom--24">
+            <input type="submit" name="submit" value="Connexion" (click)="signIn()" style=" background-color: rgb(84, 105, 212);">
+          </div>
+          <div class="field">
+          </div>
+        </form>
+        <div style="text-align: center;background-color: indianred" class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="saved==false" >
+          <strong style="text-align: center" style="color: white">vos informations sont incorrectes, veuillez vérifier vos informations</strong>
+
+        </div>
+      </div>
+    </div>
+
+  </div>

@@ -1,0 +1,73 @@
+<div class="pane__inner row">
+  <article>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="container" style="text-align: center;margin: auto">
+      <section class="panel">
+
+        <h1 style="font-size: 40px;color: black;font-weight: bolder">
+          Liste Des Candidats                  </h1>
+        <hr>
+
+        <br>
+        <br>
+
+
+        <div id="#table-wrapper" class="large-screen" style="width: 1300px">
+          <table style="text-align: center" class="table-responsive card-list-table large-screen">
+            <thead>
+            <tr style="background: darkgrey;text-align: center">
+
+              <th class="center" style="color: snow;background-color: Green;text-align: center"> <b> Score </b></th>
+
+              <th class="center" style="color: snow;text-align: center"><b>Id </b></th>
+              <th class="center" style="color: snow;text-align: center"><b>Cin</b></th>
+              <th class="center" style="color: snow;text-align: center"> <b>Nom  </b></th>
+              <th class="center" style="color: snow;text-align: center"><b>Email</b></th>
+
+              <th class="center" style="color: snow;text-align: center"> <b>Numero De Telephone </b></th>
+              <th class="center" style="color: snow;text-align: center"> <b>Adresse </b></th>
+
+
+
+            </tr>
+            </thead>
+            <tbody>
+
+
+            <tr *ngFor="let comp of shorteddata">
+              <td class="center"  ><span>{{comp.score}}</span></td>
+
+              <td class="center"> <span>{{comp.id}}</span></td>
+
+              <td class="center"><span>{{comp.cin}}</span></td>
+
+              <td class="center"><span>{{comp.nom}}</span></td>
+
+
+              <td class="center"><span>{{comp.email}}</span></td>
+
+              <td class="center" ><span>{{comp.phoneNumber}}</span></td>
+              <td class="center"><span>{{comp.adresse}}</span></td>
+
+
+
+
+
+            </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+
+
+
+      </section>
+    </div>
+
+  </article>
+</div>

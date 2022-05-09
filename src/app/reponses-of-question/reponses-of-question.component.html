@@ -1,0 +1,39 @@
+<div class="container" style="margin-left:240px;margin-top:120px;box-shadow: 1px 1px 5px #7e3f72">
+
+    <h1 style="margin-left:30px;padding-top: 10px" >
+        Question No <span style="color:#7e3f72;font-size: 30px"> {{this.questionId}} </span>                   </h1>
+    <hr>
+
+    <br>
+
+  <div class="row" >
+  <div >
+
+    <h1> > Question :</h1>
+    <p>{{selectedQuestion.question}}</p>
+
+  </div>
+  <div >
+
+    <h1>> Points : </h1>
+    <p> {{selectedQuestion.points}}</p>
+  </div>
+  <div >
+
+    <h1>> Domaine :</h1>
+    <p> {{selectedQuestion.domaine}}</p>
+
+  </div>
+  </div>
+    <div class="row" *ngFor=" let q of selectedQuestion.reponse;let i =index">
+      <div class="col-lg-3">
+        <h1 class="display-1"> > Reponse <span style="color:#7e3f72;font-size: 28px"> {{i+1}}  </span> :   <small>{{q.reponse}}</small></h1>
+      </div>
+      <div class="col-lg-3">
+        <h1 *ngIf="q.isTrue == true"><i class="fa-solid fa-check" style="color:green"></i></h1>
+        <h1 *ngIf="q.isTrue == false"><i class="fa-solid fa-xmark" style="color:red"></i></h1>
+
+      </div>
+      </div>
+
+</div>

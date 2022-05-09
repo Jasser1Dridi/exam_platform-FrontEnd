@@ -1,0 +1,26 @@
+
+
+
+<div class="form-style-2" style="border: 1px solid grey;box-shadow: 1px 1px 5px green;margin:auto;margin-top:100px">
+
+  <label><span> </span><input type="submit" (click)='addReponse()' style="margin-left: 250px"value="Add Reponse"  /></label>
+
+  <div class="form-style-2-heading">Creation Questionnaire</div>
+  <form action="" method="post" [formGroup]="questionForm">
+    <label for="field1"><span>Question <span class="required">*</span></span><input type="text" class="input-field" name="field1"  formControlName="questionName" value="" /></label>
+    <label for="field2"><span>Points <span class="required">*</span></span><input type="number" class="input-field" name="field2" formControlName="points" /></label>
+    <label><span>Domaine</span> <textarea     formControlName="domaine" class="tel-number-field" name="tel_no_1" value="" cols="450"  style="width: 224px"> </textarea></label>
+    <div class="form-style-2-heading">Réponse </div>
+    <div formArrayName="reponses" *ngFor="let t of reponses.controls; let i = index">
+      <div class="row" [formGroupName]="i">
+    <label for="field4"><span>Reponse :</span><input name="field4" class="select-field"  formControlName='reponse' id="{{'reponse'+i}}" type="texte"></label>
+    <label for="field5"><span>Réponse correcte:  <span class="required">*</span></span><input formControlName="isTrue" name="field5" type="checkbox" id="{{'isTrue'+i}}"  [value]="true" style="width: 25px;height:25px"></label>
+      </div>
+    </div>
+    <label><span> </span><input type="submit" value="Submit" (click)="saveQuestionnaire()" style="margin-right:100px"/></label>
+  </form>
+  <div style="text-align: center" class="alert alert-success alert-dismissible fade show" role="alert" *ngIf="sucess"  >
+    <strong style="text-align: center">votre inscription a bien été enregistrée</strong>
+
+  </div>
+</div>
