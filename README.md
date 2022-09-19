@@ -6,7 +6,7 @@ This Project is the Front End of the secure exam platform built to manage the en
 * Ranking System
 * Authentification system
 * Integrate Gmail SMTP server
-* Developing custom exams  
+* Develop custom exams  
 
 ## Usage
 [npm](https://user-images.githubusercontent.com/109926714/191094099-74f9a365-3609-4fb1-a987-0d779e419a89.mp4)
