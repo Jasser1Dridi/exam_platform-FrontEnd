@@ -2,13 +2,14 @@
 
 This Project is the Front End of the secure exam platform built to manage the entire exam .
 ## Features
-* Manage the exams
+* Managing the exams
+* Ranking System
 * Authentification system
 * Integrate Gmail SMTP server
-* Developing specifications for tests and questionnaires 
+* Developing custom exams  
 
 ## Usage
-https://user-images.githubusercontent.com/109926714/191094099-74f9a365-3609-4fb1-a987-0d779e419a89.mp4
+[npm](https://user-images.githubusercontent.com/109926714/191094099-74f9a365-3609-4fb1-a987-0d779e419a89.mp4)
 
 ## Installation
 
